@@ -28,11 +28,16 @@
 </p>
 This repository contains the official implementation of the ICCV 2025 paper "Factorized Learning for Temporally Grounded Video-Language Models".
 
-The camera-ready paper and the source code will be released soon.
+
+## 🔆 Highlights 
+
+- **Model:** We propose a new framework $D^2\mathrm{VLM}$, where we decompose the generation objective into a "grounding then answering with evidence referencing" paradigm and introduce evidence tokens to emphasize explicit event-level visual semantic capture.
+- **Training Algorithm:** We introduce Factorized Preference Optimization (FPO) that explicitly addresses both temporal grounding and textual response. A factorized data synthesis approach is also designed to support FPO.
+- **Performance:** Our method consistently outperforms SOTA methods across various tasks.
+- **Open Source:** The camera-ready paper and the source code will be released soon.
 
 
-
-<!-- ## 🎓 Citation
+## 🎓 Citation
 
 If you find our work useful in your research, please consider to cite our paper:
 
@@ -41,8 +46,7 @@ If you find our work useful in your research, please consider to cite our paper:
     title={Factorized Learning for Temporally Grounded Video-Language Models},
     author={Zeng, Wenzheng and Gao, Difei and Shou, Mike Zheng and Ng, Hwee Tou},
     booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-    pages={13854--13863},
     year={2025}
   }
-  ``` -->
+  ```
 
