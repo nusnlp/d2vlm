@@ -14,17 +14,13 @@
   <p align="center"><sup>1</sup>National University of Singapore</p>
   <h3 align="center">ICCV 2025</h3>
 
-  <!-- <h3 align="center"> <a href="https://wenzhengzeng.github.io/mpeblink/">Project Page</a> | <a href="https://arxiv.org/abs/2303.16053">Paper</a> | <a href="https://www.youtube.com/watch?v=ngME7dym0Uk">Video</a> | <a href="https://wenzhengzeng.github.io/mpeblink/static/images/cvpr23_poster.pdf">Poster</a> | <a href="https://zenodo.org/record/7754768">Dataset</a> | <a href="https://github.com/wenzhengzeng/MPEblink#-demo">Demo</a></h3>
-    <h3 align="center"> <a href="https://paperswithcode.com/sota/on-mpeblink?p=real-time-multi-person-eyeblink-detection-in">
-  <img src="https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/real-time-multi-person-eyeblink-detection-in/on-mpeblink" alt="PWC"> -->
+
 </a> </h3>
   <div align="center"></div>
 </p>
 <p align="center">
     <img src="pictures/fig1.png" width="100%"/>
-<!--    This repository contains the official implementation of the CVPR 2023 paper: "Real-time Multi-person Eyeblink Detection in the Wild for Untrimmed Video". <br> -->
 
-<!--    The official implementation of the CVPR 2023 paper: "Real-time Multi-person Eyeblink Detection in the Wild for Untrimmed Video". -->
 </p>
 This repository contains the official implementation of the ICCV 2025 paper "Factorized Learning for Temporally Grounded Video-Language Models".
 
@@ -34,7 +30,84 @@ This repository contains the official implementation of the ICCV 2025 paper "Fac
 - **Model:** We propose a new framework $D^2\mathrm{VLM}$, where we decompose the generation objective into a "grounding then answering with evidence referencing" paradigm and introduce evidence tokens to emphasize explicit event-level visual semantic capture.
 - **Training Algorithm:** We introduce Factorized Preference Optimization (FPO) that explicitly addresses both temporal grounding and textual response. A factorized data synthesis approach is also designed to support FPO.
 - **Performance:** Our method consistently outperforms SOTA methods across various tasks.
-- **Open Source:** The camera-ready paper and the source code will be released soon.
+- **Open Source:** We release the source code and model weights to the community.
+
+
+## 🔥News
+* [2025-10] Code and model weights are released!
+* [2025-06] Our work is accepted to ICCV 2025!
+
+
+## 🛠️ Installation
+
+Please refer to the following environmental settings that we use. You may install these packages by yourself if you meet any problem during automatic installation.
+
+- CUDA 11.8
+- Python 3.12.2
+- PyTorch 2.4.0
+- [Transformers](https://github.com/huggingface/transformers) 4.44.2
+- [DeepSpeed](https://github.com/microsoft/DeepSpeed) 0.14.5
+- [NNCore](https://github.com/yeliudev/nncore) 0.4.5
+
+### Install from source
+
+1. Clone the repository from GitHub.
+
+```shell
+git clone https://github.com/nusnlp/d2vlm.git
+cd d2vlm
+```
+
+2. Initialize conda environment.
+
+```shell
+conda create -n d2vlm python=3.12 -y
+conda activate d2vlm
+```
+
+3. Install dependencies.
+
+```shell
+pip install -r requirements.txt
+```
+
+## 📦 Dataset
+
+Please refer to the [Dataset](https://huggingface.co/datasets/wenzhengzeng/D2VLM-Dataset) page.
+
+## 🤖 Inference and Evaluation
+1. You can download the pre-trained model at [here](https://huggingface.co/wenzhengzeng/D2VLM-Models).
+2. Run the following commands. Remember to change the absolute path within each .sh file.
+
+### E.T. Bench
+
+```shell
+  bash scripts/inference.sh
+
+  # or refer to the inference and Evaluation part of scripts/train_inference_eval.sh
+```
+
+
+### Charades-STA
+```shell
+  bash all_benchmark_eval/charades/inference.sh
+```
+
+all_benchmark_eval/charades/inference.sh
+### Youcook2
+
+```shell
+  bash all_benchmark_eval/youcook2/inference.sh
+```
+
+
+## 💪 Training
+1. Download the pretrained model from [here](https://huggingface.co/PolyU-ChenLab/ETChat-Phi3-Mini-Stage-2) (stage-2 model of E.T. Chat).
+2. Check and run the following command (modify relevant path).
+```shell
+  bash scripts/train_inference_eval.sh
+```
+
 
 
 ## 🎓 Citation
@@ -46,7 +119,11 @@ If you find our work useful in your research, please consider to cite our paper:
     title={Factorized Learning for Temporally Grounded Video-Language Models},
     author={Zeng, Wenzheng and Gao, Difei and Shou, Mike Zheng and Ng, Hwee Tou},
     booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-    year={2025}
+    year={2025},
+    pages={20683-20693}
   }
   ```
+  
+## 🙏 Acknowledgments
 
+This project was built upon [E.T. Bench](https://github.com/PolyU-ChenLab/ETBench), [TimeChat](https://github.com/RenShuhuai-Andy/TimeChat), and [AMP](https://github.com/takomc/amp). We thank their solid contribution to the community!
