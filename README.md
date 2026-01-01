@@ -6,21 +6,24 @@
 <!--     · -->
     <a href="https://scholar.google.com/citations?user=No9OsocAAAAJ&hl=en">Difei Gao</a><sup>1</sup>,
 <!--     · -->
-    <a href="https://scholar.google.com/citations?&user=h1-3lSoAAAAJ&hl=en">Mike Zheng Shou</a><sup>1</sup>,
+    <a href="https://scholar.google.com/citations?&user=h1-3lSoAAAAJ&hl=en">Mike Zheng Shou</a><sup>1†</sup>,
 <!--     · -->
-    <a href="https://scholar.google.com/citations?user=FABZCeAAAAAJ&hl=en">Hwee Tou Ng</a><sup>1</sup>,
+    <a href="https://scholar.google.com/citations?user=FABZCeAAAAAJ&hl=en">Hwee Tou Ng</a><sup>1†</sup>,
     
   </p>
   <p align="center"><sup>1</sup>National University of Singapore</p>
+  <p align="center"><sup>†</sup>Corresponding authors</p>
   <h3 align="center">ICCV 2025</h3>
 
   <h3 align="center"> 
-  <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Zeng_Factorized_Learning_for_Temporally_Grounded_Video-Language_Models_ICCV_2025_paper.pdf">📄 Paper</a> &nbsp; | &nbsp;
-  <a href="https://openaccess.thecvf.com/content/ICCV2025/supplemental/Zeng_Factorized_Learning_for_ICCV_2025_supplemental.pdf">📄 Supp.</a> &nbsp; | &nbsp;
+  <a href="https://arxiv.org/pdf/2512.24097">📄 Paper with supp.</a> &nbsp; | &nbsp;
+   <a href="https://huggingface.co/papers/2512.24097">🤗 Daily paper</a> &nbsp; | &nbsp;
   <a href="https://huggingface.co/wenzhengzeng/D2VLM-Models">🤗 Model</a> &nbsp; | &nbsp;
   <a href="https://huggingface.co/datasets/wenzhengzeng/D2VLM-Dataset">🤗 Dataset</a> &nbsp; | &nbsp;
   <a href="https://iccv.thecvf.com/media/PosterPDFs/ICCV%202025/1301.png?t=1759990615.5445755">🖼️ Poster</a> &nbsp; | &nbsp;
   <a href="https://www.youtube.com/watch?v=DylkFjyTITs&t=2s">▶️ Video</a> &nbsp; | &nbsp;
+<a href="https://x.com/alexzeng1206/status/1979028427425345851"> X (Twitter)</a> &nbsp;| &nbsp;
+<a href="https://zhuanlan.zhihu.com/p/1981856210606125509"> 知乎</a> &nbsp;
 </a> </h3>
   <div align="center"></div>
 </p>
