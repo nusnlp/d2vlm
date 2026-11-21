@@ -762,27 +762,15 @@ def tal_eval(samples, delimiter):
         iou_evi = temporal_iou(gt, evi)
 
         for i, thr in enumerate(iou_thr):
-            if iou.max() < thr:
-                # print(1)
-                continue
-                
-            else:
+            # Score each channel independently; a miss leaves the accumulated score unchanged.
+            if iou.max() >= thr:
                 rec = (iou.amax(dim=1) >= thr).float().mean().item()
                 prc = (iou.amax(dim=0) >= thr).float().mean().item()
-                if rec == 0 and prc == 0:
-                    f1_score[i] = 0 
-                else:
-                    f1_score[i] += 2 * prc * rec / (prc + rec)
-
+                f1_score[i] += 2 * prc * rec / (prc + rec)
+            if iou_evi.max() >= thr:
                 rec_evi = (iou_evi.amax(dim=1) >= thr).float().mean().item()
                 prc_evi = (iou_evi.amax(dim=0) >= thr).float().mean().item()
-                if rec_evi == 0 and prc_evi == 0:
-                    f1_score_evi[i] = 0 
-                else:
-                    f1_score_evi[i] += 2 * prc_evi * rec_evi / (prc_evi + rec_evi)
-                if f1_score_evi[i] < 0.3:
-                    # print(1)
-                    pass
+                f1_score_evi[i] += 2 * prc_evi * rec_evi / (prc_evi + rec_evi)
             
 
     f1_score = [f / len(samples) for f in f1_score]
@@ -819,7 +807,9 @@ def evs_eval(samples, delimiter):
             gt_map[s:e] = 1
             gt_len += e - s
 
-        pred_map = pred_map_evi = torch.zeros(1000)
+        # Keep answer and evidence masks independent.
+        pred_map = torch.zeros(1000)
+        pred_map_evi = torch.zeros(1000)
         pred_len = pred_len_evi = 0
         for p in pred:
             s = max(0, round(p[0]))
